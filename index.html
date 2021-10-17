@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additon</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: sans-serif;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid black;
+        }
+
+        input {
+            margin: 2px 10px 15px 10px;
+            border: 1px solid black;
+            padding: 5px 10px 5px 10px;
+        }
+
+        input:valid {
+            border: 2px solid rgb(45, 172, 45);
+        }
+
+        button {
+            margin: 20px;
+        }
+
+        #output {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .text {
+            margin: 6px 10px 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <span class="text">First Number: </span><input id="firstInput" type="number" required>
+        <span class="text">Second Number: </span><input id="secondInput" type="number" required>
+        <span id="output">OUTPUT</span>
+        <button id="add">ADD</button>
+    </div>
+    <script>
+        let firstInput;
+        let secondInput;
+        let total;
+        let output;
+        document.getElementById("add").addEventListener("click", function () {
+            firstInput = document.getElementById("firstInput").value;
+            secondInput = document.getElementById("secondInput").value;
+            total = parseInt(firstInput) + parseInt(secondInput);
+            document.getElementById("output").innerHTML = " Total = " + total;
+        });
+    </script>
+</body>
+
+</html>
